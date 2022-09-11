@@ -1,0 +1,17 @@
+{
+    "name": "bridge-discord-irc",
+    "version": "0.1.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node ./app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "^14.3.0",
+        "dotenv": "^16.0.2",
+        "irc": "^0.5.2"
+    }
+}
