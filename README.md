@@ -26,4 +26,6 @@ More work to be done soon!!!
 Also Expiremental feature atthe bottom of index.js
 ------------------------------------
 # TO-DO
-Let Irc msgs from bridge show #chans and @nicks
+Let Irc msgs from Disorc show #chans and @nicks
+...more things
+Flip patties
