@@ -14,6 +14,8 @@ Install dependencies
   - npm install irc
   - npm install discord.js
 ------------------------------------
+![image](https://user-images.githubusercontent.com/57972505/189520000-69128cae-6944-4a79-9a93-691b711e0179.png)
+------------------------------------
 More work to be done soon!!!
 Also Expiremental feature atthe bottom of index.js
 ------------------------------------
