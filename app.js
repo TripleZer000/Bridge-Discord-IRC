@@ -32,16 +32,15 @@ client.on('messageCreate', async (message) => {
             // If user has no nick then use message.author.username which is the normal username example Tester#0123
             console.log('[' + message.author.username + ']: ' + message.content)
             channel.send('test')
-        } else { 
+        } else {
             // If message.member.nickname has a value it will do this below
             console.log('[' + message.member.nickname + ']: ' + message.content);
-            channel.send('test')
+            //channel.send('test')
         }
     }
 });
 
-
-//async await client.login(process.env.DISCORD_BOT_TOKEN);
+client.login(process.env.DISCORD_BOT_TOKEN);
 //////////////////////////////////////////////////////////////
 ////////////////IRC BRIDGE SIDE CODE BELOW////////////////////
 //////////////////////////////////////////////////////////////
@@ -61,7 +60,3 @@ bot.addListener('message', function (from, to, message) {
 });
 
 // channel.sendTyping();
-
-(async () => {
-    await client.login(process.env.DISCORD_BOT_TOKEN);
-});
