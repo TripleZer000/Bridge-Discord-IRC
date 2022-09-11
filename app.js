@@ -35,16 +35,16 @@ client.on("ready", () => {
 //////////////////////////////////////////////////////////////
 
 var bot = new irc.Client(process.env.irc_server, process.env.nick, {
-    channels: ["#" + process.env.channel],
+    channels: [process.env.channel],
 });
 
 (async () => {
     await client.login(process.env.DISCORD_BOT_TOKEN);
 
     // Need this line below to tell the code later on what channel the bot sends messages to!
-    const channel = await client.channels.fetch(process.env.discord_chan_id);
+    const discordChannel = await client.channels.fetch(process.env.discord_chan_id);
     bot.addListener("message", function (from, to, message) {
-        channel.send("[" + from + "]: " + message);
+        discordChannel.send("[" + from + "]: " + message);
         console.log("%s => %s: %s", from, to, message);
     });
 
@@ -59,12 +59,17 @@ var bot = new irc.Client(process.env.irc_server, process.env.nick, {
             if (message.member.nickname == undefined) {
                 // If user has no nick then use message.author.username which is the normal username example Tester#0123
                 console.log("[" + message.author.username + "]: " + message.content);
-                bot.send("PRIVMSG", "#" + process.env.channel, "[" + message.author.username + "]: " + message.content);
+                bot.send("PRIVMSG", process.env.channel, "[" + message.author.username + "]: " + message.content);
             } else {
                 // If message.member.nickname has a value it will do this below
                 console.log("[" + message.member.nickname + "]: " + message.content);
-                bot.send("PRIVMSG", "#" + process.env.channel, "[" + message.member.nickname + "]: " + message.content);
+                bot.send("PRIVMSG", process.env.channel, "[" + message.member.nickname + "]: " + message.content);
             }
         }
+    });
+
+    process.stdin.on("data", (data) => {
+        discordChannel.send("[console]: " + data.toString().trim());
+        bot.send("PRIVMSG", process.env.channel, "[console]: " + data.toString().trim());
     });
 })();
