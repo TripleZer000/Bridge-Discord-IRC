@@ -10,28 +10,12 @@ Node 16.9.0 or newer
   - (to see all node versions) nvm -list
   - nvm use 16.17.0
 Install dependencies
-  - npm install
+  - npm install dotenv
+  - npm install irc
+  - npm install discord.js
 ------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-------------------------------
+More work to be done soon!!!
+Also Expiremental feature atthe bottom of index.js
+------------------------------------
 # TO-DO
-Let Irc msgs from bridge shoe #chans and @nicks
+Let Irc msgs from bridge show #chans and @nicks
