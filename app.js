@@ -26,6 +26,12 @@ client.on("ready", () => {
 // Starts the IRC bot with a new irc.CLient to connect to the API also logs into IRC here
 var bot = new irc.Client(process.env.irc_server, process.env.nick, {
     channels: ["#" + process.env.channel],
+    password: process.env.pass,
+    // Undenote below line if channel has a password
+    //channels: ["#" + process.env.chan_and_pass],
+    // change below to false to see everything the irc api sends to your console
+    debug: false,
+    showErrors: false,
 });
 
 // Creating an async await function (needed to properly use discord.js channel for channel.send)
