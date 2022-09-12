@@ -27,6 +27,6 @@ Also Expiremental feature atthe bottom of index.js
 ------------------------------------
 # TO-DO
 Let Irc msgs from Disorc show #chans and @nicks
-Let IRC interpret nick changes to Discord
+
 ...more things
 Flip patties
